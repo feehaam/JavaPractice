@@ -1,0 +1,4 @@
+rootProject.name = 'Executor_service_and_Virtual_threads'
+include 'src:main:java'
+findProject(':src:main:java')?.name = 'java'
+
