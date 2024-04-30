@@ -1,0 +1,79 @@
+mutation MyMutation {
+    # Create
+    createTourSpot(
+        input: {tourSpotName: "Cox's bazar", description: "The longest and most beautiful sea beach in  the world.", address: {city: "Chittagong", country: "Bangladesh"}, geoLocation: {latitude: 33.45454, longitude: 51.54545}}
+    ) {
+        description
+        averageRating
+        totalRatingCount
+        nearbyHotels {
+            accommodationId
+            address {
+                postalCode
+                state
+                street
+            }
+            averageRating
+            geoLocation {
+                latitude
+                longitude
+            }
+            name
+        }
+        photos
+        ratings {
+            comment
+            created
+            rate
+            ratedBy {
+                firstName
+                lastName
+                touristId
+            }
+            ratingId
+        }
+        tourSpotId
+        tourSpotName
+    }
+
+    # Update
+    updateTourSpot(
+        input: {tourSpotName: "Cox's bazar", description: "The longest and most beautiful sea beach in  the world.", address: {city: "Chittagong", country: "Bangladesh"}, geoLocation: {latitude: 33.45454, longitude: 51.54545}}
+        tourSpotId: 1
+    ) {
+        description
+        averageRating
+        totalRatingCount
+        nearbyHotels {
+            accommodationId
+            address {
+                postalCode
+                state
+                street
+            }
+            averageRating
+            geoLocation {
+                latitude
+                longitude
+            }
+            name
+        }
+        photos
+        ratings {
+            comment
+            created
+            rate
+            ratedBy {
+                firstName
+                lastName
+                touristId
+            }
+            ratingId
+        }
+        tourSpotId
+        tourSpotName
+    }
+
+    # Delete
+    deleteTourSpot(tourSpotId: 1)
+}

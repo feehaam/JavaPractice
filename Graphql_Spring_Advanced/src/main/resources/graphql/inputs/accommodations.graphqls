@@ -1,0 +1,29 @@
+input AccommodationInput {
+    name: String!
+    type: AccommodationType!
+    address: AddressInput!
+    description: String
+    facilities: FacilitiesInput!
+    geoLocation: GeoLocationInput
+    photos: [String]
+}
+
+input FacilitiesInput {
+    rentPerNight: Float!
+    foodIncluded: Boolean!
+    discount: Float
+    offers: String
+}
+
+input GeoLocationInput {
+    latitude: Float!
+    longitude: Float!
+}
+
+enum AccommodationType{
+    HOTEL
+    HOSTEL
+    RESORT
+    CAMPGROUND_SHELTERED
+    CAMPGROUND_OPEN_SKY
+}

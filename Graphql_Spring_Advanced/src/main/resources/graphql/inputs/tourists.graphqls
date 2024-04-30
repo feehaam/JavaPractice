@@ -1,0 +1,6 @@
+input TouristInput {
+    firstName: String!
+    lastName: String!
+    currentAddress: AddressInput
+    birthPlace: AddressInput
+}

@@ -1,0 +1,38 @@
+mutation MyMutation {
+
+    # Create
+    createRating(
+        input: {rate: 8, ratedBy: 10, comment: "It was great! Highly recommended.", ratingType: ACCOMMODATION}
+    ) {
+        comment
+        created
+        rate
+        ratedBy {
+            firstName
+            lastName
+            touristId
+        }
+        ratingId
+        updated
+    }
+
+    #Update
+    updateRating(
+        input: {rate: 9, ratedBy: 10, comment: "It was great! Highly recommended.", ratingType: TOUR_SPOT}
+        ratingId: 1
+    ) {
+        comment
+        created
+        rate
+        ratingId
+        updated
+        ratedBy {
+            firstName
+            lastName
+            touristId
+        }
+    }
+
+    #Delete
+    deleteRating(ratingId: 1)
+}

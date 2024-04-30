@@ -1,0 +1,17 @@
+type Mutation{
+    createTourist(input: TouristInput!): Tourist
+    updateTourist(touristId: Int!, input: TouristInput!): Tourist
+    deleteTourist(touristId: Int!): Boolean
+
+    createRating(input: RatingInput!): Rating
+    updateRating(ratingId: Int!, input: RatingInput!): Rating
+    deleteRating(ratingId: Int!): Boolean
+
+    createAccommodation(input: AccommodationInput!): Accommodation
+    updateAccommodation(accommodationId: Int!, input: AccommodationInput!): Accommodation
+    deleteAccommodation(accommodationId: Int!): Boolean
+
+    createTourSpot(input: TourSpotInput!): TourSpot
+    updateTourSpot(tourSpotId: Int!, input: TourSpotInput!): TourSpot
+    deleteTourSpot(tourSpotId: Int!): Boolean
+}

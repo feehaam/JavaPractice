@@ -1,0 +1,68 @@
+mutation MyMutation {
+
+    # Create
+    createAccommodation(
+        input: {name: "Hotel Stary-Nights", type: HOTEL, address: {city: "Bandanbans", country: "Bangladesh", postalCode: "1245", state: "Chittagong", street: "12/3 Kazi Nozrul Rd"}, facilities: {rentPerNight: 1800, foodIncluded: false, discount: 25, offers: "Get two rooms and get one free"}, description: "The one and the only 5 star hotel in 500 meter latitude.", geoLocation: {latitude: 68.54545, longitude: 81.453455}}
+    ) {
+        description
+        averageRating
+        totalRatingCount
+        accommodationId
+        address {
+            city
+            country
+            postalCode
+            state
+            street
+        }
+        facilities {
+            discount
+            facId
+            foodIncluded
+            offers
+            rentPerNight
+        }
+        geoLocation {
+            latitude
+            longitude
+        }
+        name
+        photos
+        type
+    }
+
+    # Update
+    updateAccommodation(
+        input: {name: "Hotel Stary-Nights", type: HOTEL, address: {city: "Bandanbans", country: "Bangladesh", postalCode: "1245", state: "Chittagong", street: "12/3 Kazi Nozrul Rd"}, facilities: {rentPerNight: 1800, foodIncluded: false, discount: 25, offers: "Get two rooms and get one free"}, description: "The one and the only 5 star hotel in 500 meter latitude.", geoLocation: {latitude: 68.54545, longitude: 81.453455}}
+        accommodationId: 10
+    ) {
+        description
+        averageRating
+        totalRatingCount
+        accommodationId
+        address {
+            city
+            country
+            postalCode
+            state
+            street
+        }
+        facilities {
+            discount
+            facId
+            foodIncluded
+            offers
+            rentPerNight
+        }
+        geoLocation {
+            latitude
+            longitude
+        }
+        name
+        photos
+        type
+    }
+
+    # Delete
+    deleteAccommodation(accommodationId: 10)
+}

@@ -1,0 +1,11 @@
+enum RatingTypeEnum {
+    ACCOMMODATION
+    TOUR_SPOT
+}
+
+input RatingInput {
+    rate: Float!
+    ratingType: RatingTypeEnum!
+    targetId: Int!
+    comment: String
+}

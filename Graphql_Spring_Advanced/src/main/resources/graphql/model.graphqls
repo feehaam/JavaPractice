@@ -1,0 +1,69 @@
+type Accommodation {
+    accommodationId: Int!
+    name: String!
+    type: String!
+    address: Address!
+    description: String
+    facilities: Facilities!
+    geoLocation: GeoLocation!
+    photos: [String]!
+    averageRating: Float
+    totalRatingCount: Int
+    ratings: [Rating]
+}
+
+type Address {
+    street: String!
+    city: String!
+    state: String!
+    postalCode: String!
+    country: String!
+}
+
+type Facilities {
+    facId: Int!
+    rentPerNight: Float!
+    foodIncluded: Boolean!
+    discount: Float
+    offers: String
+}
+
+type GeoLocation {
+    latitude: Float!
+    longitude: Float!
+}
+
+type Rating {
+    ratingId: Int!
+    rate: Float!
+    comment: String
+    ratedBy: Tourist!
+    created: String!
+    updated: String!
+}
+
+type Tourist {
+    touristId: Int!
+    firstName: String!
+    lastName: String!
+    currentAddress: Address!
+    birthPlace: Address!
+}
+
+type TourSpot {
+    tourSpotId: Int!
+    tourSpotName: String!
+    description: String
+    photos: [String]!
+    nearbyHotels: [Accommodation]
+    averageRating: Float
+    totalRatingCount: Int
+    ratings: [Rating]
+}
+
+type TestModel {
+    id: Int!
+    name: String!
+    age: String!
+    occupation: String!
+}

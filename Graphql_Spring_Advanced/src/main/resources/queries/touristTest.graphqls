@@ -1,0 +1,32 @@
+mutation MyMutation {
+    createTourist(
+        input: {firstName: "MD", lastName: "Feeham", birthPlace: {city: "Dhaka", country: "Bangladesh"}}
+    ) {
+        firstName
+        lastName
+        touristId
+    }
+    updateTourist(
+        input: {firstName: "MD", lastName: "Feeham", birthPlace: {city: "Dhaka", country: "Bangladesh"}, currentAddress: {city: "Redlili", country: "Starland", postalCode: "2340", state: "Pink desert", street: "3/4 A"}}
+        touristId: 1
+    ) {
+        firstName
+        lastName
+        touristId
+        birthPlace {
+            city
+            country
+            postalCode
+            state
+            street
+        }
+        currentAddress {
+            city
+            country
+            postalCode
+            state
+            street
+        }
+    }
+    deleteTourist(touristId: 10)
+}
