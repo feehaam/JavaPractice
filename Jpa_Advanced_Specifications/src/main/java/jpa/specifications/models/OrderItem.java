@@ -12,9 +12,20 @@ public class OrderItem {
     private Product product;
     private Integer quantity;
     private Double price;
-    @ManyToOne
-    @JsonIgnore
+
+    @JoinColumn(name = "order_id")
+    @ManyToOne(cascade = CascadeType.ALL)
     private Order order;
+
+    public OrderItem() {
+    }
+
+    public OrderItem(Product product, Integer quantity, Double price, Order order) {
+        this.product = product;
+        this.quantity = quantity;
+        this.price = price;
+        this.order = order;
+    }
 
     public Long getId() {
         return id;

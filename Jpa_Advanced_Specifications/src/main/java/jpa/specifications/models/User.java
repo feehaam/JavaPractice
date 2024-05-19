@@ -24,6 +24,18 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Order> orders;
 
+    public User() {
+    }
+
+    public User(String firstName, String lastName, String emailAddress, LocalDate dateOfBirth, String country, String city) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.dateOfBirth = dateOfBirth;
+        this.country = country;
+        this.city = city;
+    }
+
     public Long getId() {
         return id;
     }

@@ -18,6 +18,19 @@ public class Product {
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
 
+    public Product() {
+    }
+
+    public Product(String name, String description, Double price, Double rating, String thumbnailUrl, LocalDateTime createTime, LocalDateTime updateTime) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.rating = rating;
+        this.thumbnailUrl = thumbnailUrl;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+    }
+
     public Long getId() {
         return id;
     }

@@ -25,6 +25,22 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
+    public Order() {
+    }
+
+    public Order(String tracId, List<OrderItem> orderItems, LocalDateTime orderTime, String voucherName, Double totalAmount, Double voucherReduction, String offerName, Double offerReduction, Double deliveryCharge, Double finalAmount) {
+        this.tracId = tracId;
+        this.orderItems = orderItems;
+        this.orderTime = orderTime;
+        this.voucherName = voucherName;
+        this.totalAmount = totalAmount;
+        this.voucherReduction = voucherReduction;
+        this.offerName = offerName;
+        this.offerReduction = offerReduction;
+        this.deliveryCharge = deliveryCharge;
+        this.finalAmount = finalAmount;
+    }
+
     public Long getId() {
         return id;
     }
