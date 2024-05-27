@@ -1,6 +1,6 @@
 package com.feeham.concurrency;
 
-public class G_SharedResourceHttp__Note {
+public class G0_SharedResourceHttp__Note {
     // Use JMeter or some tool to make thousands requests to test.
     // Hit both /inc and /dec api concurrently.
     // In the middle of the JMeter hits execution or after those keep hitting /val from postman

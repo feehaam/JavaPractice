@@ -2,7 +2,7 @@ package com.feeham.concurrency;
 
 // Instead of method blocking, lets do section blocking or locking, benefits: each method can be used by
 // multiple threads, smaller blocking section
-public class E_Concurrency_AtomicOperation_Sol2 {
+public class E3_Concurrency_AtomicOperation_Sol2 {
     public static void main(String[] args) throws InterruptedException {
         InventoryCounter inventoryCounter = new InventoryCounter();
         IncrementingThread incrementingThread = new IncrementingThread(inventoryCounter);

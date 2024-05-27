@@ -3,7 +3,7 @@ package com.feeham.concurrency;
 // By using volatile, any line of code written before a volatile object will always run before volatile object read/write
 // and any line below will execute after, in simple words: synchronized before and after. However, the lines before it may be async among them
 // and lines after it as well!
-public class F_DataRace_Solution {
+public class F2_DataRace_Solution {
 
     public static void main(String[] args) {
         Data data = new Data();

@@ -1,9 +1,9 @@
 package com.feeham.concurrency;
 
-// Used synchronized methods to lock an operation
-// Note that, when one method is executing no other thread can access any other method that use same variables or
-// shared resources being used by the executing method.
-public class E_Concurrency_AtomicOperation_Sol1 {
+// The traditional concurrency problem, two different operations are being performed on a same shared object as a
+// result, the operations get interrupted by other operation in middle resulting in chaos & incorrect results!
+// We increment a value 10k times and decrement 10k times too, but the result is not 0 because of this problem.
+public class E1_Concurrency_AtomicOperation_Problem {
     public static void main(String[] args) throws InterruptedException {
         InventoryCounter inventoryCounter = new InventoryCounter();
         IncrementingThread incrementingThread = new IncrementingThread(inventoryCounter);
@@ -44,13 +44,13 @@ public class E_Concurrency_AtomicOperation_Sol1 {
 
     private static class InventoryCounter {
         private int items = 0;
-        public synchronized void increment() {
+        public void increment() {
             items++;
         }
-        public synchronized void decrement() {
+        public void decrement() {
             items--;
         }
-        public synchronized int getItems() {
+        public int getItems() {
             return items;
         }
     }

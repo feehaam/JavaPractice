@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/t1")
 @RequiredArgsConstructor
-public class G_SharedResourceHttp_Controller {
-    private final G_SharedResourceHttp_DataSource data;
+public class G1_SharedResourceHttp_Controller {
+    private final G2_SharedResourceHttp_DataSource data;
 
     private volatile int incCount = 0;
     private volatile int decCount = 0;

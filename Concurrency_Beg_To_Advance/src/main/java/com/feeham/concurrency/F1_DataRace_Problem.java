@@ -4,7 +4,7 @@ package com.feeham.concurrency;
 // As a result, EVEN IF WE USED SYNCHRONIZED KEYWORD still even before all 3 operations of x++ (get value of x,
 // increment x by 1, set new value to x) is completed, the next line may start executing.
 // Basically it was never supposed to happen: y > x. But it is happening because of data race condition.
-public class F_DataRace_Problem {
+public class F1_DataRace_Problem {
 
     public static void main(String[] args) {
         Data data = new Data();

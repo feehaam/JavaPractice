@@ -1,8 +1,10 @@
 package com.feeham.concurrency;
 
-// Just the order is same now. Worst case: One chef will be working on a resource and other might be waiting for it
-// although another resource is free, resulting in a queue. But it will never make deadlock.
-public class H_DeadlockChef_Solution {
+// There are two chefs, chef1 always cleans the dish first then cooks foods and chef2 always cooks food then cleans the dish problem is: there is
+// only one stove and one sink! In a busy day while both of them are working, the chef1 told chef2, "I'll leave the sink for you
+// after you free the stove for me", and the chef2 replied, "if I leave the stove then where will I put my food as my dishes are not cleaned yet!
+// I can only leave the stove when you are done in sink"... They got deadlocked, then, now, forever...
+public class H1_DeadlockChef_Problem {
 
     public static void main(String[] args) throws InterruptedException {
         Stove stove = new Stove();
@@ -44,12 +46,12 @@ public class H_DeadlockChef_Solution {
     private static class Chef2 {
         public void work(Stove stove, Sink sink) {
             while (true) {
-                System.out.println("Sink is taken by CHEF-2");
-                synchronized (sink) {
+                System.out.println("Stove is taken by CHEF-2");
+                synchronized (stove) {
                     stove.cook("CHEF-2");
 
-                    System.out.println("Stove is taken by CHEF-2");
-                    synchronized (stove) {
+                    System.out.println("Sink is taken by CHEF-2");
+                    synchronized (sink) {
                         sink.clean("CHEF-2");
                     }
                 }
