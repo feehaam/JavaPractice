@@ -10,12 +10,9 @@ public class C_Join {
 
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(5, 50, 100, 10000, 100000, 10000000);
-        List<Thread> threads = numbers.stream().map(n -> new Thread(new FactorialCalculator(n))).toList();
-
-        threads.forEach(thread -> {
-            thread.setDaemon(true);
-            thread.start();
-        });
+        List<Thread> threads = numbers.stream().map(n ->
+                    Thread.ofPlatform().daemon(true).start(new FactorialCalculator(n))
+                ).toList();
 
         threads.forEach(thread -> {
             try {
